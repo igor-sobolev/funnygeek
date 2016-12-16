@@ -1,0 +1,7 @@
+node_modules
+node_modules/*
+/.project
+app/config.js
+.jshintrc
+release/*
+coverage/*

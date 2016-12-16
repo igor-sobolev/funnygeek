@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="funnyGeek">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+        <script type="text/javascript" src="node_modules/angular-animate/angular-animate.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+        <link href="favicon.ico" rel="icon" type="image/x-icon" />
+        <script type="text/javascript" src="app/app.js"></script>
+        <script type="text/javascript" src="directives/speech/speech.js"></script>
+        <script type="text/javascript" src="app/config.js"></script>
+    </head>
+    <body ng-controller="mainCtrl as main">
+        <div class="modal" ng-show="!isSupport()">
+            <div class="modal-background">
+            </div>
+            <div class="modal-content">
+                <h5>Sorry! Your browser doesn't support speech API.</h5>
+            </div>
+        </div>
+        <div class="modal" ng-show="isSupport() && !lang">
+            <div class="modal-background">
+            </div>
+            <div class="modal-content">
+                <h5>What language will you speak?</h5>
+                <div class="panel">
+                    <span class="ru" ng-click="lang = 'ru-RU'"></span>
+                    <span class="en" ng-click="lang = 'en-US'"></span>
+                </div>
+            </div>
+        </div>
+        <div class="modal" ng-show="lang && !bot">
+            <div class="modal-background">
+            </div>
+            <div class="modal-content">
+                <h5>Choose bot</h5>
+                <div class="panel">
+                    <span class="bot-btn" ng-click="bot = 'cleverbot'">Cleverbot</span>
+                    <span class="bot-btn disabled">Local bot (haven't learnt)</span>
+                </div>
+            </div>
+        </div>
+        <div class="geek" speech=""></div>
+        <div class="status">
+            <div class="status-content">
+                <button ng-click="restart()" class="listen-btn">Restart</button>
+            </div>
+        </div>
+        <div class="messages" ng-controller="SpeechController">
+            <div class="messages-content">
+                <div class="qw">{{qw}}</div>
+                <div class="ans">{{ans}}</div>
+            </div>
+        </div>
+    </body>
+</html>

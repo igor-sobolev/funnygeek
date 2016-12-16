@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+}
+
+html, body {
+    min-height: 100%;
+    font-size: 18px;
+}
+
+.modal {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    transition: 0.5s;
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.modal.ng-hide-remove,
+.modal.ng-show-add {
+  -webkit-animation: 0.8s show;
+  animation: 0.8s show;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.modal.ng-hide-add, .modal.ng-show-remove {
+    -webkit-animation: 0.5s hide;
+    animation: 0.5s hide;
+}
+
+.modal-background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: repeating-linear-gradient(
+      -45deg,
+      #333,
+      #333 5px,
+      #111 5px,
+      #111 10px
+      );
+    opacity: 0.9;
+    color: white;
+    text-shadow: 1px 1px 2px #333;
+}
+
+.modal-content {
+    color: white;
+    position: absolute;
+    display: block;
+    height: 50%;
+    top: 25%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 1;
+}
+
+.modal-content h5 {
+    position: relative;
+    font-style: Arial;
+    font-size: 40px;
+    display: block;
+    padding: 15px;
+    margin: 0;
+    cursor: default;
+}
+
+.ru {
+    background-image: url(/assets/img/flags/flag-ru.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    width: 150px;
+    max-width: 150px;
+    min-height: 100px;
+    padding: 5%;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.en {
+    background-image: url(/assets/img/flags/flag-en.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    width: 150px;
+    max-width: 150px;
+    min-height: 100px;
+    padding: 5%;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.ru:hover, .en:hover {
+    box-shadow: 2px 2px 4px #333;
+    opacity: 0.8;
+}
+
+body {
+    text-align: center;
+}
+
+.geek {
+    background-image: url(/assets/img/geek-girl.jpg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 70vw;
+    height: 80vh;
+    max-width: 500px;
+    min-width: 300px;
+    min-height: 500px;
+    max-height: 1200px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.speaking {
+    animation: speak;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes speak {
+    0%   {background-image: url(/assets/img/geek-girl.jpg);}
+    25%  {background-image: url(/assets/img/geek-girl-mouth-half.jpg);}
+    50%  {background-image: url(/assets/img/geek-girl-mouth-full.jpg);}
+    75%  {background-image: url(/assets/img/geek-girl-mouth-half.jpg);}
+    100% {background-image: url(/assets/img/geek-girl.jpg);}
+}
+
+.bot-btn {
+    display: inline-block;
+    padding: 15px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    background-color: #3322ff;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+    width: 80%;
+    border-radius: 4px;
+}
+
+.bot-btn:hover {
+    background-color: #333;
+}
+
+.bot-btn.disabled, .bot-btn.disabled:hover {
+    cursor: not-allowed;
+    opacity: 0.8;
+    background: repeating-linear-gradient(
+      45deg,
+      #606dbc,
+      #606dbc 10px,
+      #465298 10px,
+      #465298 20px
+      );
+}
+
+.messages .qw {
+    display: inline-block;
+    padding: 15px;
+    width: 30%;
+    float: left;
+    border-radius: 5px;
+    border: 1px solid #45bb36;
+    box-shadow: 1px 1px 2px #45bb36 inset, -1px -1px 2px #45bb36 inset;
+    background-color: #88dd88;
+    color: #115511;
+    text-align: center;
+}
+
+.messages {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    min-height: 20vh;
+    margin: auto;
+    font-weight: bold;
+    font-style: Arial, sans-serif;
+}
+
+.messages-content {
+    text-align: center;
+    padding: 0px 15px;
+    max-width: 1170px;
+    margin: auto;
+    display: block;
+    text-align: right;
+}
+
+.messages .ans {
+    display: inline-block;
+    padding: 15px;
+    width: 30%;
+    float: right;
+    border-radius: 5px;
+    border: 1px solid #4536bb;
+    box-shadow: 1px 1px 2px #4536bb inset, -1px -1px 2px #4536bb inset;
+    background-color: #8888dd;
+    color: #121255;
+    text-align: center;
+}
+
+.status {
+    position: absolute;
+    display: block;
+    width: 100%;
+    right: 0;
+    top: 30px;
+}
+
+.status-content {
+    padding: 0px 15px;
+    max-width: 1170px;
+    margin: auto;
+    display: block;
+    text-align: right;
+}
+
+.listen-btn {
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #88dd88;
+    border: 1px solid #45bb36;
+    box-shadow: 1px 1px 2px #45bb36 inset, -1px -1px 2px #45bb36 inset;
+    outline: none !important;
+    height: 90px;
+    width: 90px;
+    font-size: 20px;
+    line-height: 40px;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+    text-shadow: 0px 1px 1px #115511;
+}
+
+.listen-btn:hover {
+    background-color: #99ee99;
+}
+
+@media screen and (max-width: 1170px) {
+    .messages .ans, .messages .qw {
+        display: block;
+        width: auto;
+        float: none;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+}
